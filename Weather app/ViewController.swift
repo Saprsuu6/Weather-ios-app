@@ -2,6 +2,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var weatherInfo: UILabel!
+    @IBOutlet var windInfo: UILabel!
     @IBOutlet var getWeatherBtn: UIButton!
     
     override func viewDidLoad() {
@@ -10,7 +11,8 @@ class ViewController: UIViewController {
     }
     
     @objc func didTapedGetWeatherBtn() {
-        weatherInfo.text = "Fetching data..."
+        weatherInfo.text = "Fetching temperature data..."
+        windInfo.text = "Fetching wind data..."
         
         let urlString = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m"
         
@@ -24,10 +26,8 @@ class ViewController: UIViewController {
                     let temperature = weather.current.temperature2M;
                     let windSpeed = weather.current.windSpeed10M;
                     
-                    self.weatherInfo.text = """
-                        Temperature: \(temperature)°C
-                        Wind Speed: \(windSpeed) m/s
-                    """
+                    self.weatherInfo.text = "Temperature: \(temperature)°C"
+                    self.windInfo.text = "Wind Speed: \(windSpeed) m/s"
                     
                     switch temperature {
                         case ..<0: // Низкая температура
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                         case 0...20: // Средняя температура
                             self.weatherInfo.textColor =  UIColor(red: 173/255, green: 255/255, blue: 47/255, alpha: 1)
                         default: // Высокая температура
-                            self.weatherInfo.textColor =  UIColor(red: 255/255, green: 69/255, blue: 0/255, alpha: 1) // 
+                            self.weatherInfo.textColor =  UIColor(red: 255/255, green: 69/255, blue: 0/255, alpha: 1) //
                     }
                 }
 

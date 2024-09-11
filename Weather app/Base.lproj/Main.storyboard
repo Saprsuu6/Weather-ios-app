@@ -17,18 +17,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rR-ka-jLa">
-                                <rect key="frame" x="0.0" y="83" width="393" height="30"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="5qn-hF-E92">
-                                <rect key="frame" x="121.66666666666669" y="167" width="150" height="150"/>
+                                <rect key="frame" x="121" y="168" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="DX8-NW-aVd"/>
                                     <constraint firstAttribute="height" constant="150" id="QaX-OY-CST"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZU-T0-6Qn">
+                                <rect key="frame" x="0.0" y="97" width="393" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gts-mv-Cho">
                                 <rect key="frame" x="138" y="363" width="117" height="35"/>
                                 <state key="normal" title="Button"/>
@@ -38,18 +44,23 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5qn-hF-E92" firstAttribute="top" secondItem="5ZU-T0-6Qn" secondAttribute="bottom" constant="41" id="8RH-II-Enz"/>
+                            <constraint firstItem="5qn-hF-E92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="CIZ-M7-vUU"/>
                             <constraint firstItem="3rR-ka-jLa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EvA-5H-hIB"/>
-                            <constraint firstItem="gts-mv-Cho" firstAttribute="top" secondItem="5qn-hF-E92" secondAttribute="bottom" constant="46" id="NQj-nq-Z1Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5ZU-T0-6Qn" secondAttribute="trailing" id="LdZ-c0-o4D"/>
+                            <constraint firstItem="5ZU-T0-6Qn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LgD-ak-KMV"/>
+                            <constraint firstItem="gts-mv-Cho" firstAttribute="top" secondItem="5qn-hF-E92" secondAttribute="bottom" constant="45" id="OdZ-rf-0Qm"/>
+                            <constraint firstItem="5ZU-T0-6Qn" firstAttribute="top" secondItem="3rR-ka-jLa" secondAttribute="bottom" constant="8" symbolic="YES" id="SMq-FD-Q2G"/>
+                            <constraint firstItem="3rR-ka-jLa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xor-ie-Bps"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3rR-ka-jLa" secondAttribute="trailing" id="YwS-6b-OOc"/>
-                            <constraint firstItem="5qn-hF-E92" firstAttribute="top" secondItem="3rR-ka-jLa" secondAttribute="bottom" constant="54" id="ifo-Fk-ifH"/>
-                            <constraint firstItem="3rR-ka-jLa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="oVC-Jd-j1S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3rR-ka-jLa" secondAttribute="trailing" id="fyj-ZS-thI"/>
                             <constraint firstItem="gts-mv-Cho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="ov8-Ye-AgF"/>
-                            <constraint firstItem="5qn-hF-E92" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vEj-g2-swu"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="getWeatherBtn" destination="gts-mv-Cho" id="xKR-cv-Hnn"/>
                         <outlet property="weatherInfo" destination="3rR-ka-jLa" id="UOH-gG-jw9"/>
+                        <outlet property="windInfo" destination="5ZU-T0-6Qn" id="9Oj-QQ-l4Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
